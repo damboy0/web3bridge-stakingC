@@ -13,7 +13,7 @@ contract StakeERC20{
     address public owner;
     address public tokenAddress;
     uint256 public totalStakedInContract;
-    uint256 public rewardRate = 1; //reward earned per second
+    uint256 public rewardRate; //reward earned per second
     
     event Staked(address indexed user, uint256 indexed amount);
 
@@ -21,14 +21,15 @@ contract StakeERC20{
     struct Stake {
         // address user;
         uint256 tokenAmount;
-        uint256 startTime;
-        uint256 duration;
+        uint256 startTime; 
+        uint256 duration; //in seconds
         uint256 expectedReward;
         bool isStaked;
         bool isClaimed; //to track claiming
     }
 
     mapping (address => Stake[]) userStakes;
+
     //track all stakes in the contract
     Stake[] public allStakes;
 
