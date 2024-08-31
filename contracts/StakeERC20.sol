@@ -104,9 +104,9 @@ contract StakeERC20{
         uint256 reward = 0;
         uint256 stakingTime = _stake.startTime + _stake.duration;
 
-            uint256 Si = _stake.tokenAmount;
+            uint256 Si = _stake.tokenAmount; // amount staked by user 
 
-            uint256 Ti = totalStakedInContract; // Assume totalStaked doesn't change; otherwise, you'd store it per second
+            uint256 Ti = totalStakedInContract; // total amount staked in the contract
 
             reward = (Si * rewardRate * stakingTime) / (Ti * 100);// Divide by 100 to make the reward rate from 5 to 0.5 
         
