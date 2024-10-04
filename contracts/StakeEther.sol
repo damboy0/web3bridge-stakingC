@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
 pragma solidity ^0.8.20;
 
-contract StakeERC20{
+contract StakeEther{
     error ZeroAddressDetected();
     error ZeroValueNotAllowed();
     error NotOwner();
